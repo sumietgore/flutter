@@ -70,8 +70,14 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: GridView.count(
-          crossAxisCount: 4,
+        body: 
+        LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          final double maxWidth = constraints.maxWidth;
+          final int crossAxisCount = (maxWidth ~/ 180).clamp(2, 6); // Adjust the desired item width as needed
+
+          return GridView.count(
+          crossAxisCount: crossAxisCount,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,
           padding: const EdgeInsets.all(10),
@@ -167,7 +173,10 @@ class HomePage extends StatelessWidget {
               productDescription: 'Sprite Can',
             ),
           ],
-        ));
+        );
+        }
+        )
+        );
   }
 }
 
