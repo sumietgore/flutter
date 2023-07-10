@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/rendering.dart';
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
@@ -42,7 +43,7 @@ class VendingMachineApp extends StatelessWidget {
     return MaterialApp(
       title: 'Vending Machine',
       scrollBehavior: MyCustomScrollBehavior(),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -70,7 +71,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: GridView.count(
-          crossAxisCount: 2,
+          crossAxisCount: 4,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,
           padding: const EdgeInsets.all(10),
