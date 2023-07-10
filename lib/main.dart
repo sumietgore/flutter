@@ -41,7 +41,7 @@ class VendingMachineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Vending Machine',
+      title: 'turobox Vend',
       scrollBehavior: MyCustomScrollBehavior(),
       home: const HomePage(),
     );
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(width: 16),
               const Text(
-                'TuroBox Vend',
+                'turobox Vend',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
