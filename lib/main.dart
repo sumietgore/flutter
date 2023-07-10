@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(width: 16),
               const Text(
-                'Vending Machine',
+                'TuroBox Vend',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
         LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           final double maxWidth = constraints.maxWidth;
-          final int crossAxisCount = (maxWidth ~/ 180).clamp(1, 10); // Adjust the desired item width as needed
+          final int crossAxisCount = (maxWidth ~/ 180).clamp(1,8); // Adjust the desired item width as needed
 
           return GridView.count(
           crossAxisCount: crossAxisCount,
@@ -216,8 +216,8 @@ class ProductCard extends StatelessWidget {
           children: [
             Image.asset(
               productImage,
-              width: 72,
-              height: 72,
+              width: 80,
+              height: 80,
             ),
             const SizedBox(height: 10),
             Text(
@@ -260,7 +260,7 @@ class ProductCard extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                'Price: \$${productPrice.toStringAsFixed(2)}',
+                'Price: ₹ ${productPrice.toStringAsFixed(2)}',
                 style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 10),
