@@ -233,7 +233,7 @@ class ProductCard extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: 500,
+          height: 200,
           color: Colors.white,
           padding: const EdgeInsets.all(16),
           child: Column(
