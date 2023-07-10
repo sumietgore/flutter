@@ -29,7 +29,7 @@ class VendingMachineApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Vending Machine',
       home: HomePage(),
     );
@@ -37,7 +37,9 @@ class VendingMachineApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget { 
-  const HomePage({super.key});
+  HomePage({super.key});
+  final ScrollController _controllerOne = ScrollController();
+  
   
   @override
   Widget build(BuildContext context) {
@@ -58,8 +60,9 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: CupertinoScrollbar(
+      body: CupertinoScrollbar(    
         child: GridView.count(
+          controller: _controllerOne,
           crossAxisCount: 2,
           children: const [
           ProductCard(
@@ -168,7 +171,7 @@ class HomePage extends StatelessWidget {
           productDescription: 'Sprite Can',
           ),
         ],
-        ),
+        )
       ),
     );
   }
@@ -201,8 +204,8 @@ class ProductCard extends StatelessWidget {
           children: [
             Image.asset(
               productImage,
-              width: 80,
-              height: 80,
+              width: 72,
+              height: 72,
             ),
             const SizedBox(height: 10),
             Text(
