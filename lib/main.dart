@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/rendering.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,21 +60,31 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 16),
             alignment: Alignment.centerLeft,
-            child: const Text(
-              'Vending Machine',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            child: Row(
+            children: [
+              SvgPicture.asset(
+                'assets/logo.svg', // Replace with your SVG logo path
+                width: 40,
+                height: 40,
               ),
-            ),
+              const SizedBox(width: 16),
+              const Text(
+                'Vending Machine',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ],    
           ),
+        ),
         ),
         body: 
         LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           final double maxWidth = constraints.maxWidth;
-          final int crossAxisCount = (maxWidth ~/ 180).clamp(2, 6); // Adjust the desired item width as needed
+          final int crossAxisCount = (maxWidth ~/ 180).clamp(1, 10); // Adjust the desired item width as needed
 
           return GridView.count(
           crossAxisCount: crossAxisCount,
