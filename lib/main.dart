@@ -10,7 +10,7 @@ void main() async {
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(400, 400),
+    size: Size(480, 480),
     center: true,
     fullScreen: true,
     backgroundColor: Colors.transparent,
@@ -30,7 +30,7 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
         PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
+        // PointerDeviceKind.mouse,
       };
 }
 
