@@ -16,6 +16,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () => print("touch"),
       child: Card(
         color: Colors.grey.shade100,
         elevation: 0,
