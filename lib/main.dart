@@ -85,9 +85,15 @@ class HomePage extends StatelessWidget {
           final int crossAxisCount = (maxWidth ~/ 180)
               .clamp(1, 8); // Adjust the desired item width as needed
 
+          const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
+          ScrollPhysics physics = const BouncingScrollPhysics();
+          final ScrollPhysics mergedPhysics =
+              physics.applyTo(const AlwaysScrollableScrollPhysics());
+
           return Container(
               color: Colors.white,
               child: GridView.count(
+                physics: mergedPhysics,
                 crossAxisCount: crossAxisCount,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
