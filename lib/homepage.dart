@@ -21,9 +21,8 @@ class HomePage extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   'assets/logo.svg', // Replace with your SVG logo path
-                  width: 40,
-                  height: 40,
-                  cacheColorFilter: true,
+                  width: 36,
+                  height: 36,
                 ),
                 // const SizedBox(width: 16),
                 const Text(
