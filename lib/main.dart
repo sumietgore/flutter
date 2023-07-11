@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
         body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
           final double maxWidth = constraints.maxWidth;
-          final int crossAxisCount = (maxWidth ~/ 120)
+          final int crossAxisCount = (maxWidth ~/ 180)
               .clamp(1, 8); // Adjust the desired item width as needed
 
           return GridView.count(
