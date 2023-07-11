@@ -56,107 +56,113 @@ class HomePage extends StatelessWidget {
               physics.applyTo(const AlwaysScrollableScrollPhysics());
           final ScrollController controller = ScrollController();
 
-          return Container(
-            color: Colors.white,
-            child: GridView.count(
-              physics: mergedPhysics,
-              crossAxisCount: crossAxisCount,
-              controller: controller,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              padding: const EdgeInsets.all(20),
-              children: const [
-                ProductCard(
-                  productName: 'Coke',
-                  productPrice: 20,
-                  productImage: 'assets/products/Coke.png',
-                  productDescription: 'Coke',
-                ),
-                ProductCard(
-                  productName: 'Coke (Bottle)',
-                  productPrice: 20,
-                  productImage: 'assets/products/CokeBottle.png',
-                  productDescription: 'Coke Bottle',
-                ),
-                ProductCard(
-                  productName: 'Coke (Can)',
-                  productPrice: 40,
-                  productImage: 'assets/products/CokeCan.png',
-                  productDescription: 'Coke Can',
-                ),
-                ProductCard(
-                  productName: 'Coke Zero',
-                  productPrice: 20,
-                  productImage: 'assets/products/CokeZero.png',
-                  productDescription: 'Coke Zero',
-                ),
-                ProductCard(
-                  productName: 'Coke Zero (Bottle)',
-                  productPrice: 20,
-                  productImage: 'assets/products/CokeZeroBottle.png',
-                  productDescription: 'Coke Zero Bottle',
-                ),
-                ProductCard(
-                  productName: 'Coke Zero (Can)',
-                  productPrice: 40,
-                  productImage: 'assets/products/CokeZeroCan.png',
-                  productDescription: 'Coke Zero Can',
-                ),
-                ProductCard(
-                  productName: 'Fanta',
-                  productPrice: 20,
-                  productImage: 'assets/products/Fanta.png',
-                  productDescription: 'Fanta',
-                ),
-                ProductCard(
-                  productName: 'Fanta (Bottle)',
-                  productPrice: 20,
-                  productImage: 'assets/products/FantaBottle.png',
-                  productDescription: 'Fanta Bottle',
-                ),
-                ProductCard(
-                  productName: 'Fanta (Can)',
-                  productPrice: 40,
-                  productImage: 'assets/products/FantaCan.png',
-                  productDescription: 'Fanta Can',
-                ),
-                ProductCard(
-                  productName: 'Pepsi',
-                  productPrice: 20,
-                  productImage: 'assets/products/Pepsi.png',
-                  productDescription: 'Pepsi',
-                ),
-                ProductCard(
-                  productName: 'Pepsi (Bottle)',
-                  productPrice: 20,
-                  productImage: 'assets/products/PepsiBottle.png',
-                  productDescription: 'Pepsi Bottle',
-                ),
-                ProductCard(
-                  productName: 'Pepsi (Can)',
-                  productPrice: 40,
-                  productImage: 'assets/products/PepsiCan.png',
-                  productDescription: 'Pepsi Can',
-                ),
-                ProductCard(
-                  productName: 'Sprite',
-                  productPrice: 20,
-                  productImage: 'assets/products/Sprite.png',
-                  productDescription: 'Sprite',
-                ),
-                ProductCard(
-                  productName: 'Sprite (Bottle)',
-                  productPrice: 20,
-                  productImage: 'assets/products/SpriteBottle.png',
-                  productDescription: 'Sprite Bottle',
-                ),
-                ProductCard(
-                  productName: 'Sprite (Can)',
-                  productPrice: 40,
-                  productImage: 'assets/products/SpriteCan.png',
-                  productDescription: 'Sprite Can',
-                ),
-              ],
+          return GestureDetector(
+            onVerticalDragStart: (details) => print(details),
+            onVerticalDragDown: (details) => print(details),
+            onVerticalDragEnd: (details) => print(details),
+            child: Container(
+              color: Colors.white,
+              child: GridView.count(
+                scrollDirection: Axis.vertical,
+                physics: mergedPhysics,
+                crossAxisCount: crossAxisCount,
+                controller: controller,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                padding: const EdgeInsets.all(20),
+                children: const [
+                  ProductCard(
+                    productName: 'Coke',
+                    productPrice: 20,
+                    productImage: 'assets/products/Coke.png',
+                    productDescription: 'Coke',
+                  ),
+                  ProductCard(
+                    productName: 'Coke (Bottle)',
+                    productPrice: 20,
+                    productImage: 'assets/products/CokeBottle.png',
+                    productDescription: 'Coke Bottle',
+                  ),
+                  ProductCard(
+                    productName: 'Coke (Can)',
+                    productPrice: 40,
+                    productImage: 'assets/products/CokeCan.png',
+                    productDescription: 'Coke Can',
+                  ),
+                  ProductCard(
+                    productName: 'Coke Zero',
+                    productPrice: 20,
+                    productImage: 'assets/products/CokeZero.png',
+                    productDescription: 'Coke Zero',
+                  ),
+                  ProductCard(
+                    productName: 'Coke Zero (Bottle)',
+                    productPrice: 20,
+                    productImage: 'assets/products/CokeZeroBottle.png',
+                    productDescription: 'Coke Zero Bottle',
+                  ),
+                  ProductCard(
+                    productName: 'Coke Zero (Can)',
+                    productPrice: 40,
+                    productImage: 'assets/products/CokeZeroCan.png',
+                    productDescription: 'Coke Zero Can',
+                  ),
+                  ProductCard(
+                    productName: 'Fanta',
+                    productPrice: 20,
+                    productImage: 'assets/products/Fanta.png',
+                    productDescription: 'Fanta',
+                  ),
+                  ProductCard(
+                    productName: 'Fanta (Bottle)',
+                    productPrice: 20,
+                    productImage: 'assets/products/FantaBottle.png',
+                    productDescription: 'Fanta Bottle',
+                  ),
+                  ProductCard(
+                    productName: 'Fanta (Can)',
+                    productPrice: 40,
+                    productImage: 'assets/products/FantaCan.png',
+                    productDescription: 'Fanta Can',
+                  ),
+                  ProductCard(
+                    productName: 'Pepsi',
+                    productPrice: 20,
+                    productImage: 'assets/products/Pepsi.png',
+                    productDescription: 'Pepsi',
+                  ),
+                  ProductCard(
+                    productName: 'Pepsi (Bottle)',
+                    productPrice: 20,
+                    productImage: 'assets/products/PepsiBottle.png',
+                    productDescription: 'Pepsi Bottle',
+                  ),
+                  ProductCard(
+                    productName: 'Pepsi (Can)',
+                    productPrice: 40,
+                    productImage: 'assets/products/PepsiCan.png',
+                    productDescription: 'Pepsi Can',
+                  ),
+                  ProductCard(
+                    productName: 'Sprite',
+                    productPrice: 20,
+                    productImage: 'assets/products/Sprite.png',
+                    productDescription: 'Sprite',
+                  ),
+                  ProductCard(
+                    productName: 'Sprite (Bottle)',
+                    productPrice: 20,
+                    productImage: 'assets/products/SpriteBottle.png',
+                    productDescription: 'Sprite Bottle',
+                  ),
+                  ProductCard(
+                    productName: 'Sprite (Can)',
+                    productPrice: 40,
+                    productImage: 'assets/products/SpriteCan.png',
+                    productDescription: 'Sprite Can',
+                  ),
+                ],
+              ),
             ),
           );
         }));
