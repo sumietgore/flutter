@@ -42,6 +42,7 @@ class VendApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'turobox Vend',
+      debugShowCheckedModeBanner: false,
       // initialRoute: "/home",
       scrollBehavior: MyCustomScrollBehavior(),
       // routes: {"/home": (context) => const HomePage()},
