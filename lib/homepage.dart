@@ -48,18 +48,20 @@ class HomePage extends StatelessWidget {
         body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
           final double maxWidth = constraints.maxWidth;
-          final int crossAxisCount = (maxWidth ~/ 180).clamp(1, 2);
+          final int crossAxisCount = (maxWidth ~/ 200).clamp(1, 8);
 
           const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
           ScrollPhysics physics = const BouncingScrollPhysics();
+
           final ScrollPhysics mergedPhysics =
               physics.applyTo(const AlwaysScrollableScrollPhysics());
+
           final ScrollController controller = ScrollController();
 
           return GestureDetector(
-            onVerticalDragStart: (details) => print(details),
-            onVerticalDragDown: (details) => print(details),
-            onVerticalDragEnd: (details) => print(details),
+            // onVerticalDragStart: (details) => print(details),
+            // onVerticalDragDown: (details) => print(details),
+            // onVerticalDragEnd: (details) => print(details),
             child: Container(
               color: Colors.white,
               child: GridView.count(
