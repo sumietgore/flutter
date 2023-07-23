@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
         body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
           final double maxWidth = constraints.maxWidth;
-          final int crossAxisCount = (maxWidth ~/ 180).clamp(1, 8);
+          final int crossAxisCount = (maxWidth ~/ 180).clamp(1, 2);
 
           const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
           ScrollPhysics physics = const BouncingScrollPhysics();

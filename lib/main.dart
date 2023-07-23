@@ -12,7 +12,7 @@ void main() async {
   WindowOptions windowOptions = const WindowOptions(
     size: Size(480, 480),
     center: true,
-    fullScreen: true,
+    fullScreen: false,
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
     titleBarStyle: TitleBarStyle.hidden,
