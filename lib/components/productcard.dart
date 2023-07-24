@@ -16,7 +16,6 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => print("touch"),
       child: Card(
         color: Colors.grey.shade100,
         elevation: 0,
@@ -25,8 +24,8 @@ class ProductCard extends StatelessWidget {
           children: [
             Image.asset(
               productImage,
-              width: 60,
-              height: 60,
+              width: 80,
+              height: 80,
             ),
             const SizedBox(height: 10),
             Text(
