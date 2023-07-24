@@ -47,7 +47,7 @@ class VendApp extends StatelessWidget {
       // initialRoute: "/home",
       scrollBehavior: MyCustomScrollBehavior(),
       // routes: {"/home": (context) => const HomePage()},
-      home: Home(),
+      home: const HomePage(),
     );
   }
 }
