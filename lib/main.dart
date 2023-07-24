@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:window_manager/window_manager.dart';
 
-import 'homepage.dart';
+import 'pages/homepage.dart';
+import 'pages/cartpage.dart';
+import 'pages/intropage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +45,13 @@ class VendApp extends StatelessWidget {
       // initialRoute: "/home",
       scrollBehavior: MyCustomScrollBehavior(),
       // routes: {"/home": (context) => const HomePage()},
-      home: const HomePage(),
+      // home: const HomePage(),
+      initialRoute: '/intro',
+      routes: {
+        '/intro': (context) => const IntroPage(),
+        '/home': (context) => const HomePage(),
+        '/cart': (context) => const CartPage(),
+      },
     );
   }
 }
