@@ -3,7 +3,6 @@ import 'package:flutter/gestures.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'homepage.dart';
-import "home.dart";
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,11 +28,8 @@ void main() async {
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
-  Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-        PointerDeviceKind.stylus
-      };
+  Set<PointerDeviceKind> get dragDevices =>
+      {PointerDeviceKind.touch, PointerDeviceKind.mouse};
 }
 
 class VendApp extends StatelessWidget {

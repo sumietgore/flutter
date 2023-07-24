@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           preferredSize: const Size.fromHeight(80),
           child: Container(
             color: Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             alignment: Alignment.centerLeft,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,14 +25,14 @@ class HomePage extends StatelessWidget {
                   height: 36,
                 ),
                 // const SizedBox(width: 16),
-                const Text(
-                  'TuroBox Vend',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
+                // const Text(
+                //   'TuroBox Vend',
+                //   style: TextStyle(
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.bold,
+                //     color: Colors.black,
+                //   ),
+                // ),
                 // const SizedBox(width: 50),
                 badges.Badge(
                   badgeContent: const Text("3"),
@@ -62,7 +62,9 @@ class HomePage extends StatelessWidget {
             // onVerticalDragStart: (details) => print(details),
             // onVerticalDragDown: (details) => print(details),
             // onVerticalDragEnd: (details) => print(details),
+
             child: Container(
+              // padding: const EdgeInsets.only(top: 30, bottom: 40),
               color: Colors.white,
               child: GridView.count(
                 scrollDirection: Axis.vertical,
@@ -71,7 +73,8 @@ class HomePage extends StatelessWidget {
                 controller: controller,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, bottom: 30, top: 20),
                 children: const [
                   ProductCard(
                     productName: 'Coke',

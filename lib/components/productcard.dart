@@ -16,9 +16,55 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        showModalBottomSheet<void>(
+          context: context,
+          shape: const RoundedRectangleBorder(
+            // <-- SEE HERE
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(25.0),
+            ),
+          ),
+          builder: (BuildContext context) {
+            return SizedBox(
+              height: 240,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  // mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          child: const Text('X'),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text('Modal BottomSheet'),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
       child: Card(
         color: Colors.grey.shade100,
         elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          //set border radius more than 50% of height and width to make circle
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
